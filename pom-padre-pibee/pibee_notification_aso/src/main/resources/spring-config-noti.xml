@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	">	
+	<bean id="requestNotificationInterceptor" class="com.bbva.pibee.aso.noti.core.RequestInterceptorNoti" />
+	<bean id="jacksonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper"/>
+	
+	<bean id="notificationFactoryBean" class="org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean">
+		<property name="providers">
+			<list>
+				<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider">
+					<constructor-arg ref="jacksonObjectMapper" />
+				</bean>
+			</list>
+		</property>
+		<property name="outInterceptors">
+			<list>
+				<ref bean="requestNotificationInterceptor" />
+			</list>
+		</property>
+	</bean>
+</beans>
