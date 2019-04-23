@@ -31,18 +31,7 @@
         <artifactId>spring-jdbc</artifactId>
         <version>${spring.version}</version>
     </dependency>
-    
-
-<!--     <dependency> -->
-<!-- 	    <groupId>com.ibm.db2</groupId> -->
-<!-- 	    <artifactId>db2jcc</artifactId> -->
-<!-- 	    <version>1.4</version> -->
-<!--     </dependency> -->
-<!--      <dependency> -->
-<!--             <groupId>com.ibm.db2</groupId> -->
-<!--             <artifactId>db2jcc_license_cu</artifactId> -->
-<!--             <version>1.4</version> -->
-<!--     </dependency> -->
+   
     
     
     <!-- AspectJ -->
